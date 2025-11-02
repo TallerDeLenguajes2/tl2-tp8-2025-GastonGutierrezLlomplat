@@ -1,0 +1,49 @@
+@model List<espacioProductos.Productos>
+
+<div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h4 fw-normal text-muted">Productos</h1>
+        <a asp-action="Crear" class="btn btn-outline-secondary btn-sm">Crear producto</a>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <thead class="text-muted small">
+                    <tr>
+                        <th scope="col" class="pe-4" style="width: 8%;">ID</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col" class="text-end pe-4">Precio</th>
+                        <th scope="col" class="text-end" style="width: 15%;">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var p in Model)
+                    {
+                        <tr class="border-bottom">
+                            <td class="text-muted">@p.idProducto</td>
+                            <td class="py-3">@p.descripcion</td>
+                            <td class="text-end py-3">$@p.precio.ToString("N2")</td>
+                            <td class="text-end py-3">
+                                <a asp-action="Editar" asp-route-id="@p.idProducto"
+                                    class="link-secondary text-decoration-none small">
+                                    Editar
+                                </a>
+                                @* <span class="mx-2">·</span>
+                                <a asp-action="Eliminar" asp-route-id="@p.idProducto" 
+                                   class="link-danger text-decoration-none small">
+                                    Eliminar
+                                </a> *@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p class="text-muted fst-italic">No hay productos registrados.</p>
+    }
+</div>
