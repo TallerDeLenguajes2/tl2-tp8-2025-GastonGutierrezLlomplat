@@ -1,0 +1,14 @@
+@model espacioPresupuestos.Presupuestos
+@{
+    ViewData["Title"] = "Eliminar Presupuesto";
+}
+
+<h2>@ViewData["Title"] - ID: @Model.IdPresupuesto</h2>
+
+<p>¿Seguro que desea eliminar este presupuesto de <strong>@Model.NombreDestinatario</strong>?</p>
+
+<form asp-action="Eliminar" method="post">
+    <input type="hidden" name="id" value="@Model.IdPresupuesto" />
+    <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+    <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+</form>

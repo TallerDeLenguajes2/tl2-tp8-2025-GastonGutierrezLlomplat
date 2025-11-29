@@ -1,0 +1,64 @@
+@model espacioPresupuestos.Presupuestos
+@{
+    ViewData["Title"] = "Detalles del Presupuesto";
+    var productosDisponibles = ViewBag.ProductosDisponibles as List<espacioProductos.Productos>;
+}
+
+<h2>@ViewData["Title"] - ID: @Model.IdPresupuesto</h2>
+
+<div class="mb-3">
+    <strong>Destinatario:</strong> @Model.NombreDestinatario <br />
+    <strong>Fecha de Creación:</strong> @Model.FechaCreacion.ToString("dd/MM/yyyy") <br />
+    <strong>Total:</strong> @Model.MontoPresupuestoConIva().ToString("C") <br />
+</div>
+
+<h4>Productos Agregados</h4>
+@if (Model.Detalle.Count == 0)
+{
+    <p>No hay productos agregados todavía.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio Unitario</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var d in Model.Detalle)
+            {
+                <tr>
+                    <td>@d.Producto?.descripcion</td>
+                    <td>@d.Producto?.precio.ToString("C")</td>
+                    <td>@d.Cantidad</td>
+                    <td>@(d.Producto != null ? (d.Producto.precio * d.Cantidad).ToString("C") : "-")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<h4>Agregar Producto</h4>
+<form asp-action="AgregarProducto" method="post">
+    <input type="hidden" name="id" value="@Model.IdPresupuesto" />
+    <div class="mb-3">
+        <label class="form-label">Producto</label>
+        <select name="idProducto" class="form-control" required>
+            <option value="">-- Seleccione --</option>
+            @foreach (var prod in productosDisponibles)
+            {
+                <option value="@prod.idProducto">@prod.descripcion</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input type="number" name="cantidad" class="form-control" min="1" value="1" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Agregar Producto</button>
+    <a class="btn btn-secondary" asp-action="Index">Volver</a>
+</form>

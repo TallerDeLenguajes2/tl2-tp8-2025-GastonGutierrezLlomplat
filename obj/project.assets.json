@@ -328,23 +328,23 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.Data.SQLite >= 9.0.10"
+      "Microsoft.Data.Sqlite >= 9.0.10"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Pc\\.nuget\\packages\\": {}
+    "C:\\Users\\gasto\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pc\\Desktop\\Facultad\\TALLER II\\tl2-tp8-2025-GastonGutierrezLlomplat\\tl2-tp8-2025-GastonGutierrezLlomplat.csproj",
+      "projectUniqueName": "D:\\Facultad Gastón\\TL2\\tl2-tp8-2025-GastonGutierrezLlomplat\\tl2-tp8-2025-GastonGutierrezLlomplat.csproj",
       "projectName": "tl2-tp8-2025-GastonGutierrezLlomplat",
-      "projectPath": "C:\\Users\\Pc\\Desktop\\Facultad\\TALLER II\\tl2-tp8-2025-GastonGutierrezLlomplat\\tl2-tp8-2025-GastonGutierrezLlomplat.csproj",
-      "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pc\\Desktop\\Facultad\\TALLER II\\tl2-tp8-2025-GastonGutierrezLlomplat\\obj\\",
+      "projectPath": "D:\\Facultad Gastón\\TL2\\tl2-tp8-2025-GastonGutierrezLlomplat\\tl2-tp8-2025-GastonGutierrezLlomplat.csproj",
+      "packagesPath": "C:\\Users\\gasto\\.nuget\\packages\\",
+      "outputPath": "D:\\Facultad Gastón\\TL2\\tl2-tp8-2025-GastonGutierrezLlomplat\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\gasto\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -374,7 +374,7 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
-          "Microsoft.Data.SQLite": {
+          "Microsoft.Data.Sqlite": {
             "target": "Package",
             "version": "[9.0.10, )"
           }
@@ -398,7 +398,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
